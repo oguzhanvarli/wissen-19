@@ -11,7 +11,7 @@ function GetDataSample() {
   //LIFECYCLE
   useEffect(() => {
     getDataAxios()
-  },[])
+  }, [])
 
   //FETCH İLE DATA ÇEKME
   const getDataFetch = async () => {
@@ -53,7 +53,18 @@ function GetDataSample() {
         )
       }
       */}
-      
+      <div className='grid grid-cols-4 gap-4 mx-8 my-10'>
+        {
+          data.map((character) => (
+            <div key={character.id} className='h-60 bg-blue-100 rounded'>
+              <p className={` text-green-400 font-bold text-center my-2 ${character.name.length < 16 ? "text-xl" : "text-base"}`}>{character.name}</p>
+              <div className=' flex justify-center'>
+                <img className='object-cover max-h-40 rounded-full' src={character.image} />
+              </div>
+            </div>
+          ))
+        }
+      </div>
     </div>
   )
 }
