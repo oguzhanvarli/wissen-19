@@ -3,7 +3,7 @@ import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOu
 import { Link } from 'react-router';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
-function CharacterCard({ character }) {
+function CharacterCard({ character, addFavorite }) {
 
   let urlName = character.name.toLowerCase().split(" ").join("-")  //Url için boşlukları kaldırıp tire ekleme işlemi
   return (
@@ -13,9 +13,9 @@ function CharacterCard({ character }) {
         <img className='object-cover max-h-40 rounded-full' src={character.image} />
       </div>
       <div className='flex justify-between mx-2 mb-2'>
-        <FavoriteBorderOutlinedIcon fontSize='large' color='action'/>
+        <FavoriteBorderOutlinedIcon fontSize='large' color='action' onClick={() => addFavorite(character)}/>
         <Link to={`/detail/${urlName}`} state={{id: character.id}}>
-          <ArrowCircleRightOutlinedIcon fontSize='large' color='action' className='cursor-pointer' />
+          <ArrowCircleRightOutlinedIcon fontSize='large' color='action' />
         </Link>
       </div>
 

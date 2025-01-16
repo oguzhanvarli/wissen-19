@@ -13,8 +13,14 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
 
 export default function Header() {
+  const navigate = useNavigate()
+
+  const {number} = useSelector(state => state.favorite)
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -90,8 +96,9 @@ export default function Header() {
           size="large"
           aria-label="show 17 new notifications"
           color="inherit"
+          onClick={() => navigate("/favorites")}
         >
-          <Badge badgeContent={1} color="error">
+          <Badge badgeContent={number} color="error">
             <FavoriteBorderOutlinedIcon />
           </Badge>
         </IconButton>
@@ -140,8 +147,9 @@ export default function Header() {
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"
+              onClick={() => navigate("/favorites")}
             >
-              <Badge badgeContent={2} color="error">
+              <Badge badgeContent={number} color="error">
               <FavoriteBorderOutlinedIcon />
               </Badge>
             </IconButton>

@@ -6,3 +6,7 @@
   color: darkviolet;
   text-decoration: line-through;
 }
+
+.MuiSvgIcon-root{
+  cursor: pointer !important;
+}
