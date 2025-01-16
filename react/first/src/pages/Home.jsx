@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import CharacterCard from '../components/CharacterCard'
+import Header from '../components/Header'
 
 function Home() {
   const [data, setData] = useState([])
@@ -19,13 +20,15 @@ function Home() {
     }
   }
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mx-8 my-10'>
-      {
-        data.map((character) => (
-          <CharacterCard character={character} />
-        ))
-      }
-    </div>
+    <>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mx-8 my-10'>
+        {
+          data.map((character) => (
+            <CharacterCard character={character} />
+          ))
+        }
+      </div>
+    </>
   )
 }
 
