@@ -1,4 +1,16 @@
-export interface GetCharacterResponse {
+export interface GerCharacterResponse {
+  info: GerCharacterInfoResponse
+  results: GetCharacterResultsResponse[]
+}
+
+export interface GerCharacterInfoResponse {
+  count: number
+  pages: number
+  next: string
+  prev: any
+}
+
+export interface GetCharacterResultsResponse {
   id: number
   name: string
   status: string
