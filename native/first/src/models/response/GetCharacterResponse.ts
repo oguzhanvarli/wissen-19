@@ -30,3 +30,10 @@ export interface NameUrl {
   url: string
 }
 
+
+//let data = [1,4,5,12,123]
+
+//split ile (...) => 1,4,5,12,123
+
+
+
